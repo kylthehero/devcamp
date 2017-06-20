@@ -21,4 +21,15 @@ end
   def edit
     @portfolio_item = Portfolio.find(params[:id])
   end
+  
+  def show
+    @portfolio_item =Portfolio.find(params[:id])
+  end
+  def destroy
+    @portfolio_item = Portfolio.find(params[:id])
+    @portfolio_item.destroy
+    respond_to do |format|
+      format.html { redirect_to blogs_url, notice: 'Record was removed.' }
+    end
+  end
 end

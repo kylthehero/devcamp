@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   
   get 'about', to: 'pages#about'
 
-  resources :blogs
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end  
   
   resources :portfolios, except: [:show]
   

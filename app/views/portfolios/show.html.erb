@@ -1,4 +1,4 @@
-<h1>Show</h1>
+
 <%= @portfolio_item.inspect %>
 
 <%= image_tag @portfolio_item.main_image %>
@@ -9,4 +9,8 @@
 
 <p><%= @portfolio_item.body %></p>
 
-<p><%= link_to portfolio_item.title, portfolio_path(portfolio_item.id) %></p>
+<h2>Technologies Used:</h2>
+
+<% @portfolio_item.technologies.each do |t| %>
+<p><%= t.name%></p>
+<% end %>
